@@ -11,6 +11,9 @@
   --nt-desaturated-blue: hsl(224, 23%, 55%);
   --nt-dark-blue: hsl(223, 47%, 23%);
 
+  /* active states */
+  --active: hsl(245, 83%, 68%);
+
   /* ### Font */
 
   --ff-redhat: "Red Hat Display", sans-serif;
@@ -84,4 +87,135 @@ h6 {
   isolation: isolate;
 }
 
-/*  */
+/* general styles */
+
+body {
+  background-image: url(./images/pattern-background-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+  min-height: 100vh;
+  font-family: var(--ff-redhat);
+  background-position: top center;
+  color: var(--nt-desaturated-blue);
+  background-color: var(--nt-pale-blue);
+}
+
+h1,
+h2 {
+  color: var(--nt-dark-blue);
+  font-weight: var(--fw-900);
+}
+
+/* card styles */
+
+.card {
+  background-color: #fff;
+  max-width: 375px;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  box-shadow: 0 16px 10px rgba(118, 108, 241, 0.1);
+}
+
+.card__contents {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: center;
+  gap: 2rem;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  background-color: var(--nt-pale-blue);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.plan-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  gap: 1rem;
+}
+
+.plan-info img {
+  width: 48px;
+  height: 48px;
+}
+
+.price h2 {
+  font-size: 16px;
+}
+
+.price p {
+  font-weight: var(--fw-500);
+}
+
+.plan a {
+  font-weight: var(--fw-700);
+  color: var(--clr-bright-blue);
+  font-size: 14px;
+}
+
+.plan a:hover {
+  color: var(--active);
+  text-decoration: none;
+
+  transition: ease-in-out 0.3s;
+}
+
+.btn {
+  background-color: var(--clr-bright-blue);
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0.8rem 0;
+
+  cursor: pointer;
+
+  box-shadow: 0 16px 10px rgba(118, 108, 241, 0.3);
+}
+
+.btn:hover {
+  background-color: var(--active);
+  transition: ease-in-out 0.3s;
+}
+
+.order_cancel {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: var(--fw-900);
+  color: var(--nt-desaturated-blue);
+}
+
+/* mobile styles */
+
+@media (max-width: 900px) {
+  body {
+    background-size: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .plan {
+    justify-content: center;
+    gap: 1em;
+  }
+}
